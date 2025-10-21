@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Ejercicio 1 - Demo</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="exercise-wrap">
+			<header class="exercise-header">
+				<div>
+					<h1 class="exercise-title">Ejercicio 1 - Tipos en JS</h1>
+					<div class="exercise-sub">Pequeña demo para probar estilos y salida en consola</div>
+				</div>
+				<div class="controls">
+					<button class="btn" id="runBtn">Ejecutar Script</button>
+					<button class="btn ghost" id="clearBtn">Limpiar</button>
+				</div>
+			</header>
+
+			<main class="grid">
+				<section class="card">
+					<div class="panel-title">Entrada / Código</div>
+					<textarea id="codeInput" class="input" placeholder="Escribe aquí (demo) ...">console.log('Hola mundo');</textarea>
+				</section>
+
+				<aside class="card">
+					<div class="panel-title">Salida / Consola</div>
+					<div id="output" class="output-console">Pulsa "Ejecutar Script" para ver resultado.</div>
+				</aside>
+			</main>
+
+			<footer class="exercise-footer">Diseño modernizado • Demo</footer>
+		</div>
+
+		<script src="./ejercicio1.js"></script>
+		<script>
+			const runBtn = document.getElementById('runBtn');
+			const clearBtn = document.getElementById('clearBtn');
+			const output = document.getElementById('output');
+			const codeInput = document.getElementById('codeInput');
+
+			runBtn.addEventListener('click', () => {
+				try {
+					// eslint-disable-next-line no-eval
+					const result = eval(codeInput.value);
+					output.textContent = String(result === undefined ? 'Script ejecutado. Revisa consola del navegador.' : result);
+				} catch (err) {
+					output.textContent = 'Error: ' + err.message;
+				}
+			});
+
+			clearBtn.addEventListener('click', () => { output.textContent = ''; });
+		</script>
+	</body>
+</html>
