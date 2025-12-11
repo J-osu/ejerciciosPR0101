@@ -1,26 +1,24 @@
 /**
- * Función auxiliar: Verifica si un número dado es primo.
+ * Verifica si un número dado es primo.
  * Un número es primo si es mayor que 1 y solo es divisible por 1 y por sí mismo.
- * Optimización: Solo comprueba divisores hasta la raíz cuadrada del número.
- * * @param {number} num - El número entero a verificar.
- * @returns {boolean} True si el número es primo, False en caso contrario.
+ * Solo comprueba divisores hasta la raíz cuadrada del número.
  */
 function esPrimo(num) {
-    // 1. Casos base y triviales
+    // Casos base y triviales
     if (num <= 1) {
         return false;
     }
-    // 2. 2 y 3 son primos
+    // 2 y 3 son primos
     if (num <= 3) {
         return true;
     }
     
-    // 3. Los múltiplos de 2 y 3 no pueden ser primos
+    // Los múltiplos de 2 y 3 no pueden ser primos
     if (num % 2 === 0 || num % 3 === 0) {
         return false;
     }
     
-    // 4. Bucle de optimización: Solo necesitamos verificar divisores 
+    // Solo necesitamos verificar divisores 
     //    hasta la raíz cuadrada de 'num'. Utilizamos el patrón 6k ± 1.
     //    Si un número tiene un divisor mayor que su raíz cuadrada, 
     //    necesariamente tiene uno menor.
@@ -34,11 +32,9 @@ function esPrimo(num) {
     return true;
 }
 
-// --- Función principal que usa la función esPrimo ---
 
 /**
- * Función principal: Imprime todos los números primos entre 1 y un límite dado.
- * * @param {number} limiteMaximo - El número máximo dado por el usuario.
+ * Imprime todos los números primos entre 1 y un límite dado por mi.
  */
 function encontrarPrimosHasta(limiteMaximo) {
     // Aseguramos que el límite sea un número entero
@@ -66,15 +62,9 @@ function encontrarPrimosHasta(limiteMaximo) {
     }
 }
 
-// --- Ejemplo de uso (simulando la entrada del usuario) ---
-
-// Cambia este valor para probar diferentes límites
 const numeroDelUsuario = 50; 
 
 console.log(`Buscando primos hasta: ${numeroDelUsuario}`);
 
 // Llamar a la función principal
 encontrarPrimosHasta(numeroDelUsuario);
-
-// --- Prueba con otro valor ---
-// encontrarPrimosHasta(10);

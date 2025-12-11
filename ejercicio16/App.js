@@ -1,9 +1,5 @@
-/**
- * Convierte una temperatura de grados Celsius a Fahrenheit.
- * Fórmula: F = (C * 9/5) + 32
- *  @param {number} celsius - Temperatura en grados Celsius.
- * @returns {number} La temperatura equivalente en grados Fahrenheit.
- */
+
+ //Convierte una temperatura de grados Celsius a Fahrenheit.
 function celsiusToFahrenheit(celsius) {
     // Validar que el valor sea numérico, aunque JavaScript ya maneja esto.
     if (typeof celsius !== 'number') {
@@ -18,11 +14,10 @@ function celsiusToFahrenheit(celsius) {
     return parseFloat(fahrenheit.toFixed(2));
 }
 
-// --- Ejemplos de uso ---
 const ceroCelsius = 0;
 const cienCelsius = 100;
 const veinteCelsius = 20;
 
-console.log(`${ceroCelsius}°C es igual a ${celsiusToFahrenheit(ceroCelsius)}°F`);        // 0°C es igual a 32.00°F
-console.log(`${cienCelsius}°C es igual a ${celsiusToFahrenheit(cienCelsius)}°F`);      // 100°C es igual a 212.00°F (Punto de ebullición del agua)
-console.log(`${veinteCelsius}°C es igual a ${celsiusToFahrenheit(veinteCelsius)}°F`);    // 20°C es igual a 68.00°F
+console.log(`${ceroCelsius}°C es igual a ${celsiusToFahrenheit(ceroCelsius)}°F`);
+console.log(`${cienCelsius}°C es igual a ${celsiusToFahrenheit(cienCelsius)}°F`);
+console.log(`${veinteCelsius}°C es igual a ${celsiusToFahrenheit(veinteCelsius)}°F`);
