@@ -3,7 +3,7 @@
  * La función ignora espacios, puntuación y es insensible a mayúsculas/minúsculas.
  */
 function esPalindromo(texto) {
-    // convertir a minúsculas y eliminar caracteres no alfanuméricos (incluyendo espacios).
+    // convertir a minúsculas y eliminar caracteres no alfanuméricos.
     // Usamos una expresión regular para limpiar la cadena.
     const textoLimpio = texto.toLowerCase().replace(/[\W_]/g, '');
 
